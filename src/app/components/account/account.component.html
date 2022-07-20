@@ -1,0 +1,129 @@
+<div class="one-among-area two-among-area pt-100 pb-70"> 
+    <div class="container">
+        <div class="one-section-title"> 
+            <span class="sub-title">WHY CHOOSE US</span> 
+             <h2>Tiny Money Acount Management</h2> 
+        </div>
+        <button class="btn btn-round btn-sm btn-success" (click)="open(mymodal1)">Add new Account</button>
+        <br><br>
+        <ng-template #mymodal1 let-modal1>
+            <div class="modal-header">
+                <h4 class="modal-title" id="modal-basic-title" >Add new Account</h4>
+                <button type="button" class="btn-danger" aria-label="Close" (click)="modal1.dismiss('Cross click')"> 
+                    <span aria-hidden="true" (click)="cancel()">×</span> 
+                </button>
+
+            </div>
+            <div class="center">
+            <form>
+                <div class="row" class="col-md-6">
+                    <input type="number" placeholder="CIN" [(ngModel)]="account.cin" [ngModelOptions]="{standalone : true}" />
+
+
+                </div>
+                <div class="row" class="col-md-6">
+                
+                        <input type="number" placeholder="RIB" [(ngModel)]="account.rib" [ngModelOptions]="{standalone : true}" />
+                </div>
+                <div class="row" class="col-md-6">
+                    <input type="text" placeholder="Area Of Living" [(ngModel)]="account.area" [ngModelOptions]="{standalone : true}" />
+
+                </div>
+                <div class="row" class="col-md-6">
+                    <input type="number" placeholder="SoldAccount" [(ngModel)]="account.totalAccount" [ngModelOptions]="{standalone : true}" />
+
+                </div>
+                <div class="row" class="col-md-6">
+                    <input type="date" placeholder="CreationDate" [(ngModel)]="account.dateCreation" [ngModelOptions]="{standalone : true}" />
+
+                </div>
+                <br>
+                <button type="button" class="btn btn-success" (click)="addAccount(account)" (click)="modal1.close('Save click')">Add</button> 
+                <button type="button" class="btn btn-info" (click)="modal1.close('Save click')" >Cancel</button>
+            </form>
+        </div>
+        </ng-template>
+        
+        
+        <div class="row">
+            <div *ngFor="let account of accountlist" class="col-sm-6 col-lg-4">
+                <div class="among-item">
+                    <div class="among-top">
+                        
+                        <!-- <img src="assets/img/home-two/among1.png" alt="Among"> -->
+                        <div class="among-icon">
+                            <i class='bx bxs-badge-dollar'></i>
+                        </div>
+                    </div>
+
+                    <div class="among-bottom">
+                        <h2>Client CIN</h2><p>{{account.cin}}</p>
+                        <h3>Client RIB</h3><p>{{account.rib}}</p>
+                        <h3>Adress</h3><p>{{account.area}}</p>
+                        <h3>Sold</h3><p>{{account.totalAccount}}</p>
+                        <h3>Score</h3> <p>{{account.score}}</p>
+                        <h3>Rank</h3><p>{{account.badge}}</p>
+                        <h3>Creation Date </h3><p>{{account.dateCreation}}</p>
+
+                        <div class="modal-footer">
+                        <p><button type="button" class="btn btn-outline-primary"
+
+                           
+                              
+                            (click)="open(mymodal)">edit</button>
+
+                            <button class="btn btn-info"(click)="deleteaccount(account.idAccount)" >delete</button>
+                        </div>
+                        <ng-template #mymodal let-modal>
+                            <div class="modal-header">
+                                <h4 class="modal-title" id="modal-basic-title">Edit</h4>
+                                <button type="button" class="close" aria-label="Close"
+                                    (click)="modal.dismiss('Cross click')">
+                                    <span aria-hidden="true" (click)="cancel()">×</span>
+
+                                </button>
+
+                            </div>
+                            <div>
+                            <form>
+                                <div class="modal-body">
+
+                                    <div class="row" class="col-md-5">
+                                        <label>cin</label>
+                                        <input type="number" [(ngModel)]="account.cin" [ngModelOptions]="{standalone : true}" />
+                                    </div>
+                                    <div class="row" class="col-md-5">
+                                        <label>rib</label>
+                                        <input type="number" [(ngModel)]="account.rib" [ngModelOptions]="{standalone : true}" />
+                                    </div>
+                                    <div class="row" class="col-md-5">
+                                        <label>area</label>
+                                        <input type="text" [(ngModel)]="account.area" [ngModelOptions]="{standalone : true}" />
+                                    </div>
+                                    <div class="row" class="col-md-5">
+                                        <label>totalAccount</label>
+                                        <input type="number" [(ngModel)]="account.totalAccount" [ngModelOptions]="{standalone : true}" />
+                                    </div>
+                                </div>
+
+                                <div class="modal-footer">
+
+                                    <button type="button" class="btn btn-info"
+                                        (click)="modal.close('Save click')" (click)="cancel()">Cancel</button>
+                                    <button class="btn btn-success"(click)="editAccount(account)" (click)="modal.close('Save click')">Validate</button>
+
+                                </div>
+                            </form>
+                        </div>
+                        </ng-template>
+                        
+                    
+                        
+                    </div>
+                </div>
+            </div>
+
+           
+        </div>
+    </div>
+ </div>

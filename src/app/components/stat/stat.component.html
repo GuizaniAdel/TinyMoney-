@@ -1,0 +1,100 @@
+<div class="container" >
+    <link rel="stylesheet" type="text/css" href="stat.component.scss" />
+    <!-- {# <div style="width: 480px;"> -->
+  
+      
+                                                    
+                                                                                                 
+        <!-- </div> #} -->
+    
+    <div>
+        <div class="titre"  > Account stats </div>
+        <div style="width: 1700;">
+      <canvas baseChart width="400" height="300"
+              [data]="pieChartData"
+              [labels]="pieChartLabels"
+              [chartType]="pieChartType"
+              [colors]="pieColors"
+              [options]="pieChartOptions"
+              [plugins]="pieChartPlugins"
+              [legend]="pieChartLegend">
+    
+      </canvas>
+    </div>
+    </div>
+    <!-- {# </div> #} -->
+  
+  
+  
+   <!-- {# <div class="container" > #}
+        {# <div style="width: 480px;">      #} -->
+            
+           
+
+
+         <div>
+            <canvas baseChart  width="400"    height="300"
+                [data]="barChartData"
+                [labels]="barChartLabels"
+                [legend]="barChartLegend"
+                [chartType]="barChartType"
+                [colors]="chartColors">
+                
+            </canvas>
+        </div> 
+        
+        <!-- {# </div>   #}
+    
+    {# </div> #} -->
+</div> 
+<div class="container" > 
+    
+        <!-- {# <div style="width: 480px;"> #} -->
+        <div>
+            
+            <canvas baseChart width="400"     height="300"
+               [data]="radarChartData"
+               [labels]="radarChartLabels"
+               [chartType]="radarChartType">
+            </canvas>
+        </div>
+  
+  
+  
+      
+    
+        <!-- {# </div> #} -->
+    
+  
+    <!-- {# <div class="container" >  #}
+        {# <div style="width: 480px;">
+    
+            <div class="text-center"  style="color: #0a4067; font-size: large;">
+                Account Analyse
+            </div> #} -->
+                
+            <div>
+                <canvas baseChart  width="400"    height="300"
+                    [data]="doughnutChartData"
+                    [colors]="donutColors"
+                    [labels]="doughnutChartLabels"
+                    [chartType]="doughnutChartType">
+                </canvas>
+            </div>
+                
+        
+        <!-- {# </div> #}
+    {# </div> #} -->
+     
+
+
+
+
+   
+
+       
+
+    
+
+  </div>
+  

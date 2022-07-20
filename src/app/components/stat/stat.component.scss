@@ -1,0 +1,19 @@
+.container {
+    
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	align-items: center;
+}
+.chart {
+    width: 200px;
+    height:300px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+.titre {
+	color: #0a4067;
+	font-size: large;
+}
